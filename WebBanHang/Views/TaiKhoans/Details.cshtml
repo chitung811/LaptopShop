@@ -1,0 +1,63 @@
+﻿@model WebBanHang.Models.User
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/Components/_AdminPage.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>TaiKhoan</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.UserName)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.UserName)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Password)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Password)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.PhoneNumber)
+        </dt>
+        <dd>
+            @if (Model.PhoneNumber == null)
+            {
+                <p>None</p>
+            }
+            else
+            {
+                @Html.DisplayFor(model => model.PhoneNumber)
+            }
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Enable2FA)
+        </dt>
+        <dd>
+            @if (Model.Enable2FA)
+            {
+                <p>Enabled</p>
+            }
+            else
+            {
+                <p>Disabled</p>
+            }
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

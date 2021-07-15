@@ -1,0 +1,142 @@
+﻿@model WebBanHang.Models.Oder
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/Components/_AdminPage.cshtml";
+    //Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Order</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Status)
+        </dt>
+        <dd>
+            @if (Model.Status)
+            {
+                <p>Thành công</p>
+            }
+            else
+            {
+                <p>Thất bại</p>
+            }
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.CheckOutType)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.CheckOutType)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.CustomerID)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.CustomerID)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.ShipName)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ShipName)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.ShipMobile)
+        </dt>
+        <dd>
+            @(Model.ShipMobile ?? "None")
+
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.ShipAddress)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ShipAddress)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.ShipEmail)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ShipEmail)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.CreatedDate)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.CreatedDate)
+        </dd>
+    </dl>
+</div>
+<br />
+
+<h4>Details</h4>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Tên hàng hóa
+            </th>
+            <th>
+                Loại
+            </th>
+            <th>
+                Số lượng
+            </th>
+            <th>
+                Giá
+            </th>
+            <th>
+                Giảm Giá
+            </th>
+            <th>
+                Thành tiền
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in ViewBag.oderDetail)
+        {
+            <tr>
+                <td>
+                    @item.TenHH
+                </td>
+                <td>
+                    @item.Loai
+                </td>
+                <td>
+                    @item.Quantity
+                </td>
+                <td>
+                    @item.Gia
+                </td>
+                <td>
+                    @(item.GiamGia)%
+                </td>
+                <td>
+                    @item.ThanhTien
+                </td>
+                <td>
+                    <a asp-action="Delete" asp-controller="OderDetails" asp-route-id="@item.ID">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+<div class="row">
+    <div class="pricedetails">
+        <div class="col-md-4 col-md-offset-8">
+
+            <h3>TOTAL: @(Model.Total)VND</h3>
+
+        </div>
+    </div>
+</div>
+    <div>
+        <a asp-action="Edit" asp-route-id="@Model.ID">Edit</a> |
+        <a asp-action="Index">Back to List</a>
+    </div>

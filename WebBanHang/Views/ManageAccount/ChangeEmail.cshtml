@@ -1,0 +1,34 @@
+﻿@{
+    ViewData["Title"] = "Change Password";
+    Layout = "~/Views/Shared/Layout_3.cshtml";
+}
+
+@model WebBanHang.ViewModels.ChangeEmailViewModel
+
+<div id="page-content" class="single-page">
+    <div class="container">
+
+        <div class="row">
+            <div class="col-md-6">
+                <div class="heading"><h2>Change Email</h2></div>
+                <form asp-action="ChangeEmail" method="post">
+
+                    <div class="form-group">
+                        <label class="control-label">Old Email: @ViewBag.OldEmail</label>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="NewEmail" class="control-label">New Email</label>
+                        <input asp-for="NewEmail" class="form-control" />
+                        <span asp-validation-for="NewEmail" class="textdanger"></span>
+                    </div>
+                    <div asp-validation-summary="ModelOnly" class="textdanger"></div>
+                    <div class="form-group">
+                        <input type="submit" value="Submit" class="btn btndefault" />
+                    </div>
+                    <a asp-action="ManageAccount" class="btn-link">Back</a>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+

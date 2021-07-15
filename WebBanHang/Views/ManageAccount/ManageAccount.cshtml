@@ -1,0 +1,108 @@
+﻿@{
+    ViewData["Title"] = "Manage your account";
+    Layout = "~/Views/Shared/Layout_3.cshtml";
+}
+@model WebBanHang.Models.AppUser
+<div id="page-content" class="single-page">
+    <div class="container">
+
+        <div class="row">
+            <div class="col-md-6">
+                <div class="heading"><h2>Manage your account: @Model.UserName</h2></div>
+                <dl class="dl-horizontal">
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Email)
+                    </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.Email)
+                        <a asp-controller="ManageAccount" asp-action="ChangeEmail" class="btn-link btn-bracketed">[Change]</a>
+                    </dd>
+                    <dt>
+                        Password:
+                    </dt>
+                    <dd>
+                        <a asp-controller="ManageAccount" asp-action="ChangePassword" class="btn-link btn-bracketed">[Change]</a>
+                    </dd>
+                    <dt>
+                        Phone Number:
+                    </dt>
+                    <dd>
+                        @(Model.PhoneNumber ?? "None")
+                        @if (Model.PhoneNumber != null)
+                        {
+                            <a asp-controller="ManageAccount" asp-action="AddPhoneNumber" class="btn-link btn-bracketed">[Change]</a>
+                            <form asp-controller="ManageAccount" asp-action="RemovePhoneNumber" method="post">
+                                <button type="submit" class="btn-link">[Remove]</button>
+                            </form>
+                        }
+                        else
+                        {
+                            <a asp-controller="ManageAccount" asp-action="AddPhoneNumber" class="btn-link btn-bracketed">[Add]</a>
+                        }
+                    </dd>
+                    <dt>
+                        Two-Factor Authentication:
+                    </dt>
+                    <dd>
+                        @if (Model.TwoFactorEnabled)
+                        {
+                            <form asp-controller="ManageAccount" asp-action="DisableTwoFactorAuthentication" method="post" class="form-horizontal">
+                                Enabled <button type="submit" class="btn-link btn-bracketed">[Disable]</button>
+                            </form>
+
+                        }
+                        else
+                        {
+                            <form asp-controller="ManageAccount" asp-action="EnableTwoFactorAuthentication" method="post" class="form-horizontal">
+                                <button type="submit" class="btn-link btn-bracketed">[Enable]</button> Disabled
+                            </form>
+                            @if (Model.PhoneNumber == null)
+                            {
+                                <div>Please add your phone number before enable two-factor authentication</div>
+                            }
+                        }
+
+                    </dd>
+                    <dt>
+                        Subscriber:
+                    </dt>
+                    <dd>
+                        @if (ViewBag.member == null)
+                        {
+                            <a class="btn-link btn-bracketed" asp-action="Subscribe" asp-controller="TrangChus">[Subscribe for more Products]</a>
+                        }
+                        else
+                        {
+                            if (ViewBag.member.Status != ViewBag.pending)
+                            {
+
+                                <a class="btn-link btn-bracketed" asp-action="Subscribe" asp-controller="TrangChus">Update</a><br />
+                                <a class="btn-link btn-bracketed" asp-action="ExportMember" asp-controller="ManageAccount" asp-route-id="@ViewBag.member.EmailAddress">[Export Email User]</a> 
+                                if (ViewBag.member.Status == ViewBag.subscribed)
+                                {
+                                    <form asp-action="Unsubscribed" asp-controller="ManageAccount" method="post" class="form-horizontal">
+                                        Subscribed <button class="btn-link btn-bracketed" type="submit">[Unsubscribed]</button>
+
+                                    </form>
+                                }
+                                else
+                                {
+                                    <form asp-action="Subscribed" asp-controller="ManageAccount" method="post" class="form-horizontal">
+                                        <button class="btn-link btn-bracketed" type="submit">[Subscribed]</button> Unsubscribed
+                                    </form>
+                                }
+                            }
+                            else
+                            {
+                                <div>Please go to your email to confirm.</div>
+                            }
+
+
+                        }
+                    </dd>
+                </dl>
+
+            </div>
+        </div>
+    </div>
+</div>
