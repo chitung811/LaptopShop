@@ -271,7 +271,7 @@ namespace WebBanHang.Controllers
 
             if(user.PhoneNumber == null)
             {
-                ViewBag.NoPhoneNumber = "You dont have Phone Number. Pleave add your Phone Number in Manage Account.";
+                ViewBag.NoPhoneNumber = "Bạn chưa thêm số điện thoại. Vui lòng thêm số điện thoại tại quản lí tài khoản";
                 return View();
             }
 

@@ -8,93 +8,93 @@
 
         <div class="row">
             <div class="col-md-6">
-                <div class="heading"><h2>Manage your account: @Model.UserName</h2></div>
+                <div class="heading"><h2>Quản lí tài khoản: @Model.UserName</h2></div>
                 <dl class="dl-horizontal">
                     <dt>
                         @Html.DisplayNameFor(model => model.Email)
                     </dt>
                     <dd>
                         @Html.DisplayFor(model => model.Email)
-                        <a asp-controller="ManageAccount" asp-action="ChangeEmail" class="btn-link btn-bracketed">[Change]</a>
+                        <a asp-controller="ManageAccount" asp-action="ChangeEmail" class="btn-link btn-bracketed">[Thay đổi]</a>
                     </dd>
                     <dt>
-                        Password:
+                        Mật khẩu:
                     </dt>
                     <dd>
-                        <a asp-controller="ManageAccount" asp-action="ChangePassword" class="btn-link btn-bracketed">[Change]</a>
+                        <a asp-controller="ManageAccount" asp-action="ChangePassword" class="btn-link btn-bracketed">[Thay đổi]</a>
                     </dd>
                     <dt>
-                        Phone Number:
+                        Số điện thoại:
                     </dt>
                     <dd>
-                        @(Model.PhoneNumber ?? "None")
+                        @(Model.PhoneNumber ?? "Không có")
                         @if (Model.PhoneNumber != null)
                         {
-                            <a asp-controller="ManageAccount" asp-action="AddPhoneNumber" class="btn-link btn-bracketed">[Change]</a>
+                        <a asp-controller="ManageAccount" asp-action="AddPhoneNumber" class="btn-link btn-bracketed">[Thay đổi]</a>
                             <form asp-controller="ManageAccount" asp-action="RemovePhoneNumber" method="post">
-                                <button type="submit" class="btn-link">[Remove]</button>
+                                <button type="submit" class="btn-link">[Xóa]</button>
                             </form>
                         }
                         else
                         {
-                            <a asp-controller="ManageAccount" asp-action="AddPhoneNumber" class="btn-link btn-bracketed">[Add]</a>
+                    <a asp-controller="ManageAccount" asp-action="AddPhoneNumber" class="btn-link btn-bracketed">[Thêm mới]</a>
                         }
                     </dd>
                     <dt>
-                        Two-Factor Authentication:
+                        Xác thực 2 yếu tố:
                     </dt>
                     <dd>
                         @if (Model.TwoFactorEnabled)
                         {
-                            <form asp-controller="ManageAccount" asp-action="DisableTwoFactorAuthentication" method="post" class="form-horizontal">
-                                Enabled <button type="submit" class="btn-link btn-bracketed">[Disable]</button>
-                            </form>
+                        <form asp-controller="ManageAccount" asp-action="DisableTwoFactorAuthentication" method="post" class="form-horizontal">
+                            Kích hoạt <button type="submit" class="btn-link btn-bracketed">[Vô hiệu]</button>
+                        </form>
 
                         }
                         else
                         {
-                            <form asp-controller="ManageAccount" asp-action="EnableTwoFactorAuthentication" method="post" class="form-horizontal">
-                                <button type="submit" class="btn-link btn-bracketed">[Enable]</button> Disabled
-                            </form>
+                    <form asp-controller="ManageAccount" asp-action="EnableTwoFactorAuthentication" method="post" class="form-horizontal">
+                        <button type="submit" class="btn-link btn-bracketed">[Kích hoạt]</button> Vô hiệu
+                    </form>
                             @if (Model.PhoneNumber == null)
                             {
-                                <div>Please add your phone number before enable two-factor authentication</div>
+                    <div>Thêm số điện thoại trước khi xác thực 2 yếu tố</div>
                             }
                         }
 
                     </dd>
                     <dt>
-                        Subscriber:
+                        Đăng kí theo dõi:
                     </dt>
                     <dd>
                         @if (ViewBag.member == null)
                         {
-                            <a class="btn-link btn-bracketed" asp-action="Subscribe" asp-controller="TrangChus">[Subscribe for more Products]</a>
+                        <a class="btn-link btn-bracketed" asp-action="Subscribe" asp-controller="TrangChus">[Đăng kí dài hạn để nhận thông báo]</a>
                         }
                         else
                         {
                             if (ViewBag.member.Status != ViewBag.pending)
                             {
 
-                                <a class="btn-link btn-bracketed" asp-action="Subscribe" asp-controller="TrangChus">Update</a><br />
-                                <a class="btn-link btn-bracketed" asp-action="ExportMember" asp-controller="ManageAccount" asp-route-id="@ViewBag.member.EmailAddress">[Export Email User]</a> 
+                    <a class="btn-link btn-bracketed" asp-action="Subscribe" asp-controller="TrangChus">Cập nhật</a><br />
+                                                                                                                    <a class="btn-link btn-bracketed" asp-action="ExportMember" asp-controller="ManageAccount" asp-route-id="@ViewBag.member.EmailAddress">[Xuất thông tin email]</a> 
                                 if (ViewBag.member.Status == ViewBag.subscribed)
                                 {
-                                    <form asp-action="Unsubscribed" asp-controller="ManageAccount" method="post" class="form-horizontal">
-                                        Subscribed <button class="btn-link btn-bracketed" type="submit">[Unsubscribed]</button>
+                    <form asp-action="Unsubscribed" asp-controller="ManageAccount" method="post" class="form-horizontal">
+                        Đăng kí theo dõi <button class="btn-link btn-bracketed" type="submit">[Hủy đăng kí theo dõi]</button>
 
-                                    </form>
+                    </form>
                                 }
                                 else
                                 {
-                                    <form asp-action="Subscribed" asp-controller="ManageAccount" method="post" class="form-horizontal">
-                                        <button class="btn-link btn-bracketed" type="submit">[Subscribed]</button> Unsubscribed
-                                    </form>
+                    <form asp-action="Subscribed" asp-controller="ManageAccount" method="post" class="form-horizontal">
+                        <button class="btn-link btn-bracketed" type="submit">[Đăng kí theo dõi]</button> Hủy đăng kí theo dõi
+                    </form>
                                 }
                             }
                             else
                             {
-                                <div>Please go to your email to confirm.</div>
+                    <div>Vui lòng đi tới gmail để nhận email xác thực</div>
                             }
 
 

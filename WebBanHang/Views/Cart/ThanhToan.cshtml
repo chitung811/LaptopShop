@@ -16,18 +16,18 @@
     <div class="heading"><h2>Thông Tin Khách Hàng</h2></div>
     <form name="form2" id="ff2" method="post" action="register.php">
         <div class="form-group">
-            <input name="shipName" class="form-control" placeholder="Name :" required>
+            <input name="shipName" class="form-control" placeholder="Tên :" required>
         </div>
 
         <div class="form-group">
-            <input name="address" class="form-control" placeholder="Address :" required>
+            <input name="address" class="form-control" placeholder="Địa chỉ :" required>
         </div>
 
         <div class="form-group">
-            <label>Phone Number : @(ViewBag.phoneNumber ?? "None")</label>
+            <label>Số điện thoại : @(ViewBag.phoneNumber ?? "Không có")</label>
             @if (ViewBag.phoneNumber == null)
             {
-                <a asp-controller="ManageAccount" asp-action="ManageAccount" class="btn-link btn-bracketed">[Go to Manage Acccount]</a>
+        <a asp-controller="ManageAccount" asp-action="ManageAccount" class="btn-link btn-bracketed">[Đi tới quản lí tài khoản]</a>
             }
         </div>
 

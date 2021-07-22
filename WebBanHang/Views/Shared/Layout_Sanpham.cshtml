@@ -1,18 +1,51 @@
 ﻿
 <!DOCTYPE html>
 
-<html lang="en">
+<html amp lang="en">
 <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-1DZ8RMX3TH"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-1DZ8RMX3TH');
+    </script>
+
+
+    <!-- Google Tag Manager -->
+    <script>
+        (function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                    new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-59J39RD');</script>
+    <!-- End Google Tag Manager -->
+
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="keywords" content="Shop ITLapTop  " />
 
     @RenderSection("metasocials", required: false)
 
-    <meta name="description" content="Free Bootstrap Themes by 365Bootstrap dot com - Free Responsive Html5 Templates">
+    <meta name="description" content="Shop chuyen ban nhung laptop nhap khau tu nuoc ngoai
+          voi gia tien phu hop voi sinh vien va tung phan khuc.Khi den cua hang ban se chon
+          duoc nhung chiec laptop ngon bo re va tot nhat cho ban">
     <meta name="author" content="http://www.365bootstrap.com">
-
-
+    <!---->
+    <meta name="twitter:card" content="Laptopshop">
+    <!--AMP-->
+    <meta name="viewport" content="width =device-width,minimum-scale =1">
+    <link rel="canonical" href="http://itlaptop.somee.com/">
+    <link rel="amphtml" href="http://itlaptop.somee.com/" />
+    <link rel="canonical" href="http://itlaptop.somee.com/">
+    <script async src=”https://cdn.ampproject.org/v0.js”></script>
     <title>@ViewData["Title"]</title>
 
     <!-- Bootstrap Core CSS -->
@@ -39,74 +72,115 @@
         <script src="js/respond.min.js"></script>
     <![endif]-->
 
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-WXECE65Z38"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
-
-        gtag('config', 'G-WXECE65Z38');
-    </script>
 
 </head>
 
 <body>
 
+    <!---->
+    <div itemscope itemtype="http://schema.org/WebPage">
+        <span itemprop="name"> </span>
+        <span itemprop="description"></span>
+    </div>
 
+    <!-- Messenger Plugin chat Code -->
+    <div id="fb-root"></div>
 
+    <!-- Your Plugin chat code -->
+    <div id="fb-customer-chat" class="fb-customerchat">
+    </div>
 
+    <script>
+        var chatbox = document.getElementById('fb-customer-chat');
+        chatbox.setAttribute("page_id", "107035835001263");
+        chatbox.setAttribute("attribution", "biz_inbox");
+
+        window.fbAsyncInit = function () {
+            FB.init({
+                xfbml: true,
+                version: 'v11.0'
+            });
+        };
+
+        (function (d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s); js.id = id;
+            js.src = 'https://connect.facebook.net/vi_VN/sdk/xfbml.customerchat.js';
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+    </script>
+
+    <!--Start of Tawk.to Script-->
+    <script type="text/javascript">
+        var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
+        (function () {
+            var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
+            s1.async = true;
+            s1.src = 'https://embed.tawk.to/60f7b265649e0a0a5ccd34a0/1fb3p1ntk';
+            s1.charset = 'UTF-8';
+            s1.setAttribute('crossorigin', '*');
+            s0.parentNode.insertBefore(s1, s0);
+        })();
+    </script>
+    <!--End of Tawk.to Script-->
+    <!-- Google Tag Manager (noscript) -->
+    <noscript>
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-59J39RD"
+                height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <!-- End Google Tag Manager (noscript) -->
     <!--Top-->
     <nav id="top">
         <div class="container">
             <div class="row">
                 <div class="col-xs-6">
                     @*<select class="language">
-                        <option value="Vietnamese" selected>Vietnamese</option>
-                        <option value="France">France</option>
-                        <option value="Germany">Germany</option>
-                        <option value="English">English</option>
-                    </select>
-                    <select class="currency">
-                        <option value="VND" selected>VND</option>
-                        <option value="EUR">EUR</option>
-                        <option value="USD">USD</option>
-                    </select>*@
+                            <option value="Vietnamese" selected>Vietnamese</option>
+                            <option value="France">France</option>
+                            <option value="Germany">Germany</option>
+                            <option value="English">English</option>
+                        </select>
+                        <select class="currency">
+                            <option value="VND" selected>VND</option>
+                            <option value="EUR">EUR</option>
+                            <option value="USD">USD</option>
+                        </select>*@
                 </div>
                 <div class="col-xs-6">
                     <ul class="top-link">
                         <ul class="nav navbar-nav navbar-right">
                             <li>
                                 <a asp-controller="TrangChus" asp-action="Subscribe">
-                                    Subscribe for more Products
+                                    Đăng kí dài hạn để nhận thông báo
                                 </a>
                             </li>
                             @if (!User.Identity.IsAuthenticated)
                             {
-                                <li>
-                                    <a asp-controller="TrangChus" asp-action="Create">
-                                        <span class="glyphicon glyphicon-user"></span> Đăng ký
-                                    </a>
-                                </li>
-                                <li>
-                                    <a asp-controller="TrangChus" asp-action="Login">
-                                        <span class="glyphicon glyphicon-log-in"></span> Đăng nhập
-                                    </a>
-                                </li>
+                            <li>
+                                <a asp-controller="TrangChus" asp-action="Create">
+                                    <span class="glyphicon glyphicon-user"></span> Đăng ký
+                                </a>
+                            </li>
+                            <li>
+                                <a asp-controller="TrangChus" asp-action="Login">
+                                    <span class="glyphicon glyphicon-log-in"></span> Đăng nhập
+                                </a>
+                            </li>
                             }
                             else
                             {
-                                <li>
-                                    <a asp-controller="Admin" asp-action="Profile">
-                                        Xin chào,
-                                        <b>@User.Identity.Name</b>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a asp-controller="TrangChus" asp-action="Logout">
-                                        <span class="glyphicon glyphicon-log-in"></span> Đăng xuất
-                                    </a>
-                                </li>
+                            <li>
+                                <a asp-controller="Admin" asp-action="Profile">
+                                    Xin chào,
+                                    <b>@User.Identity.Name</b>
+                                </a>
+                            </li>
+                            <li>
+                                <a asp-controller="TrangChus" asp-action="Logout">
+                                    <span class="glyphicon glyphicon-log-in"></span> Đăng xuất
+                                </a>
+                            </li>
                             }
                         </ul>
                     </ul>
@@ -118,7 +192,7 @@
     <header class="container">
         <div class="row">
             <div class="col-md-4">
-                <div id="logo"><img src="~/images/itlaptop.png" /></div>
+                <div id="logo"><img src="~/images/itlaptop.png" alt="Rong" /></div>
             </div>
             <div class="col-md-4">
                 <form class="form-search">
@@ -127,7 +201,7 @@
                 </form>
             </div>
             <div class="col-md-4">
-                <div id="cart"><a class="btn btn-1" asp-action="index" asp-controller="cart"><span class="glyphicon glyphicon-shopping-cart"></span>Giỏ hàng: @ViewBag.quantity item(s)</a></div>
+                <div id="cart"><a class="btn btn-1" asp-action="index" asp-controller="cart"><span class="glyphicon glyphicon-shopping-cart"></span>Giỏ hàng</a></div>
             </div>
         </div>
     </header>
@@ -151,7 +225,7 @@
                                         {
 
 
-                                            <a asp-action="Showsp" asp-route-maloai="@item.MaLoai" asp-controller="TrangChus"> @item.TenLoai</a>
+                                        <a asp-action="Showsp" asp-route-maloai="@item.MaLoai" asp-controller="TrangChus"> @item.TenLoai</a>
 
 
 
@@ -188,7 +262,7 @@
     </nav>
     @RenderBody()
 
-        @RenderSection("Scripts", required: false)
+    @RenderSection("Scripts", required: false)
 
     <!--//////////////////////////////////////////////////-->
     <!--///////////////////HomePage///////////////////////-->
@@ -199,7 +273,7 @@
             <div class="wrap-footer">
                 <div class="row">
                     <div class="col-md-3 col-footer footer-1">
-                        <img src="~/images/itlaptop.png" />
+                        <img src="~/images/itlaptop.png" alt="Rong" />
                         <p>IT Laptop là nơi phù hợp dành cho các bạn lập trình viên, sinh viên cũng như mọi ngành nghề tìm được 1 cái laptop mang theo bên mình để sử dụng cho cá nhân và công việc</p>
                     </div>
                     <div class="col-md-3 col-footer footer-2">
@@ -227,6 +301,11 @@
                             <li><span class="glyphicon glyphicon-earphone"></span>+8400 000 0000</li>
                             <li><span class="glyphicon glyphicon-envelope"></span>shop@email.com</li>
                         </ul>
+                        <!---->
+                        <p class="h-adr">
+                            <span class="p-street-address">1/10 Dân Trí </span>
+                            <span class="p-country-name">VIETNAM</span>
+                        </p>
                     </div>
                 </div>
             </div>
@@ -240,10 +319,10 @@
                     <div class="col-md-6">
                         <div class="pull-right">
                             <ul>
-                                <li><img src="~/images/visa-curved-32px.png" /></li>
-                                <li><img src="~/images/paypal-curved-32px.png" /></li>
-                                <li><img src="~/images/discover-curved-32px.png" /></li>
-                                <li><img src="~/images/maestro-curved-32px.png" /></li>
+                                <li><img src="~/images/visa-curved-32px.png" alt="Rong" /></li>
+                                <li><img src="~/images/paypal-curved-32px.png" alt="Rong" /></li>
+                                <li><img src="~/images/discover-curved-32px.png" alt="Rong" /></li>
+                                <li><img src="~/images/maestro-curved-32px.png" alt="Rong" /></li>
                             </ul>
                         </div>
                     </div>
